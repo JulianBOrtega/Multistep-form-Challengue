@@ -1,0 +1,84 @@
+<div class="flex flex-col justify-center gap-5 mx-8">
+    <div>
+        <h2 class="text-4xl font-bold">Personal Info</h2>
+        <p>Please provide your name, email address and phone number</p>
+    </div>
+
+    <form class="flex flex-col gap-6" #f = 'ngForm' (submit)="onSubmit(f)">
+        <div class="flex flex-col">
+            <div class="flex justify-between mr-2 font-medium">
+                <label>Name</label>
+
+                <div *ngIf="fullName.touched && fullName.invalid">
+                    <p *ngIf="fullName.errors?.['required']" 
+                    class="text-red-600 text-sm">
+                        This field is required
+                    </p>
+                    
+                    <p *ngIf="fullName.errors?.['minlength' || fullName.errors?.['maxlength']]" 
+                    class="text-red-600 text-sm">
+                        Must be between 3 and 15 characters long.
+                    </p>
+                </div>
+            </div>
+            <input type="text" placeholder="e.g. Vanessa Mint" name="fullName" 
+            ngModel #fullName="ngModel" required minlength="3" maxlength="15"
+            class="p-4 border rounded-xl font-medium"
+            [ngClass]="{'text-red-600 border-red-600 outline-red-600' : 
+            fullName.touched && fullName.invalid}">
+        </div>
+        <div class="flex flex-col">
+            <div class="flex justify-between mr-2 font-medium">
+                <label>Email Address</label>
+                
+                <div *ngIf="email.touched && email.invalid">
+                    <p *ngIf="email.errors?.['required']" 
+                    class="text-red-600 text-sm">
+                        This field is required
+                    </p>
+
+                    <p *ngIf="email.errors?.['minlength' || email.errors?.['maxlength']]" 
+                    class="text-red-600 text-sm">
+                        Must be between 3 and 30 characters long.
+                    </p>
+                </div>
+            </div>
+            <input type="email" placeholder="e.g. VanessaMint@gmail.com" name="email"
+            ngModel #email="ngModel" required minlength="3" maxlength="30" 
+            class="p-4 border rounded-xl font-medium"
+            [ngClass]="{'text-red-600 border-red-600 outline-red-600' : 
+            email.touched && email.invalid}">
+        </div>
+        <div class="flex flex-col">
+            <div class="flex justify-between mr-2 font-medium">
+                <label>Phone Number</label>
+                
+                <div *ngIf="phoneNumber.touched && phoneNumber.invalid">
+                    <p *ngIf="phoneNumber.errors?.['required']" 
+                    class="text-red-600 text-sm">
+                        This field is required
+                    </p>
+
+                    <p *ngIf="phoneNumber.errors?.['minlength' || phoneNumber.errors?.['maxlength']]" 
+                    class="text-red-600 text-sm">
+                        Must be between 3 and 15 characters long.
+                    </p>
+                </div>
+            </div>
+            <input type="number" placeholder="e.g. +1 234 567 890" 
+            ngModel #phoneNumber="ngModel" required name="phoneNumber"
+            class="p-4 border rounded-xl font-medium"
+            [ngClass]="{'text-red-600 border-red-600 outline-red-600' : 
+            phoneNumber.touched && phoneNumber.invalid }">
+        </div>
+        
+        <div class="flex flex-row-reverse mt-10 align-center justify-between">
+            <p class="text-red-600 text-sm order-1 mt-5" *ngIf="hasErrors">Form incomplete or has errors. Try again.</p>
+
+            <button type="submit" routerLink="form/step-2"
+            class="w-fit py-4 px-8 rounded-md bg-[#02295A] text-white font-medium" routerLink="form/step-4">
+                Next step
+            </button>
+        </div>
+    </form>
+</div>
