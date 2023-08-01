@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'formulario',
+    loadChildren: () => import('./formulario/formulario.module').then(m => m.FormularioModule)
+  },
+  {
     path:'form',
     loadChildren: () => import('./forms/forms.module').then(m => m.FormsPageModule)
   },

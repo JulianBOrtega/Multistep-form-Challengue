@@ -1,1 +1,35 @@
-<p>plan-page works!</p>
+<div class="flex flex-col justify-center gap-5 mx-8">
+    <div>
+        <h2 class="text-4xl font-bold">Select your plan</h2>
+        <p class="text-[#9699AB]">You have the option of monthly or yearly billing</p>
+    </div>
+
+    <div>
+        <img src="/assets/icon-arcade.svg" alt="arcade">
+        <p>arcade</p>
+        <p>$9/mo</p>
+    </div>
+    <div>
+        <img src="/assets/icon-advanced.svg" alt="advanced">
+        <p>advanced</p>
+        <p>$12/mo</p>
+    </div>
+    <div>
+        <img src="/assets/icon-pro.svg" alt="pro">
+        <p>pro</p>
+        <p>$15/mo</p>
+    </div>
+
+    <div class="flex gap-5 bg-[#F0F6FF] justify-center items-center">
+        <p>Monthly</p>
+        <div class="rounded-xl bg-[#02295A] w-10 h-6 flex items-center px-0.5 cursor-pointer">
+            <div class="rounded-full bg-white w-5 h-5"></div>
+        </div>
+        <p>Yearly</p>
+    </div>
+
+    <button type="submit" routerLink="form/step-2"
+            class="w-fit py-4 px-8 rounded-md bg-[#02295A] text-white font-medium" routerLink="form/step-4">
+                Next step
+    </button>
+</div>
