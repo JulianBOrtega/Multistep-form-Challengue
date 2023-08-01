@@ -1,13 +1,13 @@
 import { Localidad } from "./localidad";
 
-export interface UserInfo {
+export interface IUsuario {
     nombre: string;
     email: string;
     telefono: string;
     localidad: Localidad;
 }
 
-export const USUARIOS: UserInfo[] = [
+export const USUARIOS: IUsuario[] = [
     {
       nombre: 'Juan Pérez',
       email: 'juan.perez@example.com',

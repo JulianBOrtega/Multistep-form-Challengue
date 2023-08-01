@@ -8,6 +8,8 @@ import { TablaUsuarioComponent } from './tabla-usuario/tabla-usuario.component';
 import { LocalidadAutomcompleteComponent } from './localidad-automcomplete/localidad-automcomplete.component';
 import { FormularioRoutingModule } from './formulario-routing.module';
 import { MaterialModule } from '../shared/materials/material.module';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { MaterialModule } from '../shared/materials/material.module';
   imports: [
     CommonModule,
     FormularioRoutingModule,
-    MaterialModule
+    MaterialModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ]
 })
 export class FormularioModule { }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { UserInfo } from '../forms/models/userInfo';
+import { IUsuario } from '../formulario/models/userInfo';
 import { USUARIOS } from '../formulario/models/userInfo';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class UsuarioServiceService {
   
   constructor() { }
 
-  obtenerTodos():Observable<UserInfo[]>
+  obtenerTodos():Observable<IUsuario[]>
   {
     return of(USUARIOS)
   }
