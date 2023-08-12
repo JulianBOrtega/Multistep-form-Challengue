@@ -24,8 +24,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     CommonModule,
     FormularioRoutingModule,
     MaterialModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule
+  
   ]
 })
 export class FormularioModule { }

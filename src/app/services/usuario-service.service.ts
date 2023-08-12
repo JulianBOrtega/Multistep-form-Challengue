@@ -7,7 +7,7 @@ import { USUARIOS } from '../formulario/models/userInfo';
   providedIn: 'root'
 })
 
-export class UsuarioServiceService {
+export class UsuarioService {
   
   constructor() { }
 
